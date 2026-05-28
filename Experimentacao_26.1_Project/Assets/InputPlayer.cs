@@ -98,22 +98,11 @@ public partial class @InputPlayer: IInputActionCollection2, IDisposable
                     ""id"": ""7804259c-142e-44ea-bfd4-52067ecfed62"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""90978b3b-de46-4448-85da-ccd6667a92fc"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""1D Axis"",
                     ""id"": ""6978bf71-5e9d-4f1e-8468-588d9a2f7276"",

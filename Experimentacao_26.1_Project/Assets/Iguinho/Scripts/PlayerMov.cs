@@ -8,15 +8,24 @@ public class PlayerMov : MonoBehaviour
 
      InputPlayer control;
 
+
+    private void OnEnable()
+    {
+        control.Enable();
+    }
+
+    private void OnDisable()
+    {
+        control.Disable();
+    }
     private void Awake()
     {
         control = new InputPlayer();
-        control.Enable();
+    }
 
-        control.Iguinho.Move.performed += ctx =>
-        {
-            direction = ctx.ReadValue<float>();
-        };
+    void InputPlayer()
+    {
+        direction = control.Iguinho.Move.ReadValue<float>();
     }
 
     void Start()
@@ -26,13 +35,17 @@ public class PlayerMov : MonoBehaviour
 
     void Update()
     {
+       InputPlayer();   
+    }
+    private void FixedUpdate()
+    {
         MovePlayer();
     }
-    
+
     void MovePlayer()
     {
-  
-        rb.AddForce (new Vector2(moveSpeed * direction, 0));
+        rb.linearVelocityX = (direction * (moveSpeed * Time.deltaTime));
+       // rb.LinearVelocity = new Vector2 (rb.position.x + direction * (moveSpeed * Time.deltaTime), rb.position.y));
       
     }
 }
